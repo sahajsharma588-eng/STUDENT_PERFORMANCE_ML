@@ -29,15 +29,14 @@ print("R2 score:",r2)
 
 print("\n student performance prediction")
 
-# hours = float(input("enter study hours: "))
-# attendance = float(input("enter attendence percentage: "))
-# previous_score = float(input("enter previous score:"))
-# assignment = float(input("enter completed assignments: "))
+hours = float(input("enter study hours: "))
+attendance = float(input("enter attendence percentage: "))
+previous_score = float(input("enter previous score:"))
+assignment = float(input("enter completed assignments: "))
+new_student =[[hours, attendance,previous_score,assignment]]
+result = model.predict(new_student)
 
-# new_student =[[hours, attendance,previous_score,assignment]]
-# result = model.predict(new_student)
-
-# print("predicted final score:",round(result[0],2))
+print("predicted final score:",round(result[0],2))
 import joblib
 
 joblib.dump(model,"student_perfomance_model.pkl")
