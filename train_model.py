@@ -21,7 +21,7 @@ print(y_test.values)
 print("predicted scores:")
 print(predictions)
 from sklearn.metrics import mean_absolute_error
-mae = mean_absolute_error(y_test,predictions)
+mae = mean_absolute_error(y_test,predictions)   
 print("mean absolute error:",mae)
 from sklearn.metrics import r2_score
 r2 = r2_score(y_test, predictions)
@@ -29,12 +29,17 @@ print("R2 score:",r2)
 
 print("\n student performance prediction")
 
-hours = float(input("enter study hours: "))
-attendance = float(input("enter attendence percentage: "))
-previous_score = float(input("enter previous score"))
-assignment = float(input("enter completed assignments: "))
+# hours = float(input("enter study hours: "))
+# attendance = float(input("enter attendence percentage: "))
+# previous_score = float(input("enter previous score:"))
+# assignment = float(input("enter completed assignments: "))
 
-new_student =[[hours, attendance,previous_score,assignment]]
-result = model.predict(new_student)
+# new_student =[[hours, attendance,previous_score,assignment]]
+# result = model.predict(new_student)
 
-print("predicted final score:",round(result[0],2))
+# print("predicted final score:",round(result[0],2))
+import joblib
+
+joblib.dump(model,"student_perfomance_model.pkl")
+
+print("model saved successfully!")
