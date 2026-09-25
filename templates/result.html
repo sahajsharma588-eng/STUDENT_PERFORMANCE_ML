@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-     <title>student performance result</title>
+    <title>student performance result</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
 </head>
+
 <body>
     <div class="container">
-        <h1>student performance prediction</h1>
-        <h2>prediction result</h2>
+        <h1>Student Performance Prediction</h1>
+        <h2>Prediction Result</h2>
         <div class="result">
-            {{ prediction }}
+            <h2>Predict Final Score</h2>
+            <p>{{prediction}}</p>
         </div>
+        <a href="/">
+            <button type="button>">Predict Again</button>
+        </a>
     </div>
 </body>
 </html>

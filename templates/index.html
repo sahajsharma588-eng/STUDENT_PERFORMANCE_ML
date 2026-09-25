@@ -3,25 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
-    <title>student performance prediction</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <title>Student Performance Prediction</title>
 </head>
+
 <body>
 
     <div class="container">
-        <h1>student performance prediction</h1>
-        <p>enter student details to predict the final score.</p>
-        <from action="/predict" method="post">
-            <label>study hours</label>
+
+        <h1>Student Performance Prediction</h1>
+
+        <p>Enter student details to predict the final score.</p>
+
+        <form action="/predict" method="POST">
+
+            <label>Study Hours</label>
             <input type="number" name="study_hours" step="0.1" min="0" required>
-            <lable>attendance (%)</lable>
+
+            <label>Attendance (%)</label>
             <input type="number" name="attendance" step="0.1" min="0" max="100" required>
-            <label>previous score</label>
+
+            <label>Previous Score</label>
             <input type="number" name="previous_score" step="0.1" min="0" max="100" required>
-            <lable>assignments completed</lable>
+
+            <label>Assignments Completed</label>
             <input type="number" name="assignments" min="0" required>
-            <button type="submit">predict final score</button>
-        </from>
+
+            <button type="submit">Predict Final Score</button>
+
+        </form>
+
     </div>
+
 </body>
-</html
+</html>
