@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='static/style.css')}}">
+    <title>student performance prediction</title>
+</head>
+<body>
+
+    <div class="container">
+        <h1>student performance prediction</h1>
+        <p>enter student details to predict the final score.</p>
+        <from action="/predict" method="post">
+            <label>study hours</label>
+            <input type="number" name="study_hours" step="0.1" min="0" required>
+            <lable>attendance (%)</lable>
+            <input type="number" name="attendance" step="0.1" min="0" max="100" required>
+            <label>previous score</label>
+            <input type="number" name="previous_score" step="0.1" min="0" max="100" required>
+            <lable>assignments completed</lable>
+            <input type="number" name="assignments" min="0" required>
+            <button type="submit">predict final score</button>
+        </from>
+    </div>
+</body>
+</html
