@@ -29,7 +29,8 @@ def predict():
       ]]
 
       prediction = model.predict(input_data)
-      return f"<h1>predicted final score: {prediction[0]:.2f</h1>}"
+      return
+      render_template("result.html",prediction=prediction[0])
 
 if __name__=="__main__":
       app.run(debug=True)
